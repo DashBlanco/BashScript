@@ -1,0 +1,36 @@
+# Este es un flujo de trabajo básico que le ayudara a comer con Acciones
+
+nombre: CI
+
+# Controla cuando se ejecutará el flujo de trabajo
+en:
+  # Activa el flujo de trabajo en eventos de solicitud push o pull, pero solo para la rama "maestra"
+ empújar:
+ sucursales: [ "maestro" ]
+ pull_request:
+ sucursalessucursales: [ "maestro" ]
+
+  # Le permite ejecutar este flujo de trabajo manualmente desde la pestaña Acciones
+ flujo de trabajo_despacho:
+
+# Una ejecución de flujo de trabajo se compra de uno o más trabajos que pueden ejecutar de forma secuencial o paralela
+empleos:
+  # Este flujo de trabajo contiene un único trabajo llamado "compilación"
+ construir:
+    # El tipo de corredor en el que se ejecutará el trabajo
+ corrector: ubuntu-ultimo
+
+    # Los pasos representan una seguridad de tareas que se ejecutarán como parte del trabajo
+ pasos:
+      # Comprueba tu repositorio en $GITHUB_WORKSPACE, para que tu trabajo puede acceder a el
+      - nosotros: acciones/pago@v4
+
+      # Ejecutiva un solo comando usando el shell del corredor
+      - nombre: Ejecute un guión de una línea
+ correctorcorrector: eco ¡Hola mundo!
+
+      # Ejecutiva un conjunto de comandos usando el shell de corredores
+      - nombre: Ejecute un guión de varias líneas
+ corrector: |
+ echo Agregue otras acciones para construir,
+ prueba de eco e implementa tu proyecto.
